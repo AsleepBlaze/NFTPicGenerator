@@ -1,0 +1,79 @@
+# -*- encoding: utf-8 -*-
+
+# image_tint_config = dict(
+#     background=dict(f=(128, 128, 128), t=(255, 255, 255, 0)), #f: gt the el value
+#     targets=[
+#         dict(foreground=None, backgrounds=[(255, 255, 255, 255)], random=dict(backgrounds=[(63, 142, 144, 255), (248, 218, 74, 255)], images=['WechatIMG96.jpeg', 'WechatIMG97.jpeg', 'WechatIMG98.jpeg'])),
+#         dict(foreground=(255, 255, 255, 255), backgrounds=[(0, 0, 0, 255)], random=dict(backgrounds=[(17, 3, 52, 255)])),
+#         dict(foreground=(243, 235, 100, 255), images=['WechatIMG24.jpeg'])
+#     ]
+# )
+image_tint_config = dict(
+    background=dict(f=(128, 128, 128), t=(255, 255, 255, 0)), #f: gt the el value
+    targets=[
+        dict(foreground=None, backgrounds=[(255, 255, 255, 255)]),
+        dict(foreground=(255, 255, 255, 255), backgrounds=[(0, 0, 0, 255), (17, 3, 52, 255)]),
+        dict(foreground=(243, 235, 100, 255), images=['WechatIMG24.jpeg'])
+    ]
+)
+
+image_color_config = dict(
+    targets=dict(
+        area=dict(foreground=(0, 0, 0, 255), background=(255, 255, 255, 255)),
+        line=dict(foreground=(255, 255, 255, 255), background=(0, 0, 0, 255), reverse=True)
+    ),
+    colors = dict(
+        A=(
+            [
+                (255, 0, 0, 255),
+                (0, 255, 0, 255),
+                (0, 0, 255, 255),
+                (255, 255, 0, 255),
+                (0, 255, 255, 255),
+                (255, 0, 255, 255)
+            ],
+            ['area']
+        ),
+        B=(
+            [
+                (165, 30, 55, 255),
+                (101, 102, 169, 255),
+                (79, 188, 179, 255),
+                (222, 89, 123, 255),
+                (224, 74, 39, 255),
+                (2, 158, 127, 255),
+                (182, 105, 163, 255),
+                (161, 89, 85, 255),
+                (136, 173, 75, 255),
+                (95, 75, 139, 255),
+                (255, 111, 97, 255),
+                (15, 76, 129, 255),
+                (245, 233, 77, 255)
+            ],
+            ['area']
+        ),
+        C=(
+            [
+                (240, 248, 255, 255),
+                (0, 47, 167, 255),
+                (237, 70, 56, 255),
+                (222, 89, 123, 255),
+                (204, 157, 159, 255),
+                (29, 121, 8, 255),
+                (81, 104, 133, 255),
+                (123, 46, 102, 255),
+                (228, 0, 127, 255)
+            ],
+            ['area', 'line']
+        )
+    ),
+    combines=[
+        dict(area='A', line='B'),
+        dict(area='A', line='C', reverse=True)
+    ],
+    background_colors=[
+        (255, 0, 0, 255),
+        (245, 233, 77, 255),
+        (81, 104, 133, 255)
+    ]
+)
