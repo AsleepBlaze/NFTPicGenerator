@@ -1,0 +1,11 @@
+/.DS_Store
+/vendor/
+*.pyc
+/__pycache__/
+/.idea/
+/data/
+virtual.py
+config.py
+command/bluenile.py
+/gateway/
+/.git_bitbucket/
