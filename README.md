@@ -26,3 +26,4 @@ Note: <font color=red>The value of `-l` must not greater than the maximum number
 
 ### You can generate JPG pictures, defalut is PNG.
 Run `python console.py psd:assemble sample --use_jpg`
+
